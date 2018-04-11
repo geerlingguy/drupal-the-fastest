@@ -18,11 +18,11 @@ LANDO_DEB="https://github.com/lando/lando/releases/download/$LANDO_VERSION/lando
 if ! lando version ; then
     if [ "$(uname)" == "Darwin" ]; then
         # Install with Homebrew on macOS.
-        curl $LANDO_DMG -O
+        curl $LANDO_DMG -O -L
         # TODO: Install LandoInstaller.pkg from the DMG.
     elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
         # Install with .deb package.
-        curl $LANDO_DEB -O
+        curl $LANDO_DEB -O -L
         sudo dpkg -i $(basename $LANDO_DEB)
     fi
 fi

@@ -10,6 +10,7 @@ env:
 
 before_script:
   - phpenv config-add tests/travis.php.ini
+  - sudo netstat -tulpn
 
 script:
   # Run tests.
