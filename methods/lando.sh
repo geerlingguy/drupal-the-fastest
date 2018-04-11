@@ -15,7 +15,7 @@ LANDO_DMG="https://github.com/lando/lando/releases/download/$LANDO_VERSION/lando
 LANDO_DEB="https://github.com/lando/lando/releases/download/$LANDO_VERSION/lando-$LANDO_VERSION.deb"
 
 # Install Lando.
-if ! `lando version` ; then
+if ! lando version ; then
     if [ "$(uname)" == "Darwin" ]; then
         # Install with Homebrew on macOS.
         curl $LANDO_DMG -O
@@ -27,19 +27,21 @@ if ! `lando version` ; then
     fi
 fi
 
-# Clone Drupal.
-git clone --branch 8.6.x https://git.drupal.org/project/drupal.git drupal-lando
+# Download and expand Drupal.
+curl https://ftp-origin.drupal.org/files/projects/drupal-8.6.x-dev.zip -o drupal-lando.zip
+unzip -q drupal-lando.zip && rm drupal-lando.zip && mv drupal-8.6.x-dev drupal-lando
 cd drupal-lando
 
 # Initialize and start Lando.
-lando init --recipe drupal8 --webroot "." --name "Drupal Lando" --yes
+lando init --recipe drupal8 --webroot "." --name "drupal-lando" --yes
 lando start
 
-# Install dependencies with Lando Composer.
-lando composer install
+# Install Drush, then install Drupal inside Lando.
+lando composer require drush/drush
+lando drush si -y --site-name="Drupal Lando" --db-url=mysql://drupal8:drupal8@database/drupal8
 
-# Install Drupal with Drush inside Lando.
-lando drush si
+# Test that the environment responds to a request.
+curl -s http://drupallando.lndo.site
 
-# TODO: Test that the environment responds to a request?
-# TODO: Kill Lando? (`lando poweroff`).
+# TODO: Kill Lando.
+# lando poweroff

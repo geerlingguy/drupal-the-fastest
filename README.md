@@ -12,7 +12,7 @@ If the method is linked to a local build script, there is an automated build pro
 
   1. [`git-clone-local.sh`](methods/git-clone-local.sh): Git clone and run a local environment with PHP and SQLite [using Drupal core](https://www.drupal.org/project/drupal/issues/2911319).
   1. [`composer-drupal-vm.sh`](methods/composer-drupal-vm.sh): [Drupal Composer Project](https://github.com/drupal-composer/drupal-project) and [Drupal VM Docker Composer Plugin](https://github.com/geerlingguy/drupal-vm-docker).
-  1. [`git-clone-lando.sh`](methods/git-clone-lando.sh): Git clone and run a local environment with [Lando](https://docs.devwithlando.io).
+  1. [`lando.sh`](methods/lando.sh): Download Drupal and run a local environment with [Lando](https://docs.devwithlando.io).
   1. [`drupal-vm-composer.sh`](methods/drupal-vm-composer.sh): [Drupal VM](https://www.drupalvm.com), Vagrant, and VirtualBox, with [Drupal Composer Project](https://github.com/drupal-composer/drupal-project).
   1. [SimplyTest.me](https://simplytest.me).
   1. Try Drupal, hosting provider 1.
