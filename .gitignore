@@ -1,4 +1,5 @@
 methods/drupal-core/
 methods/composer-drupal-vm/
 methods/drupal-lando/
+methods/.lando.yml
 methods/drupal-vm-composer/

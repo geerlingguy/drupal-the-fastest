@@ -10,20 +10,21 @@
 
 # Variables.
 INSTALL_PROFILE="standard"
-LANDO_DEB="https://github.com/lando/lando/releases/download/v3.0.0-beta.40/lando-v3.0.0-beta.40.deb"
-LANDO_DEB_FILENAME="lando-v3.0.0-beta.40.deb"
+LANDO_VERSION="v3.0.0-beta.40"
+LANDO_DMG="https://github.com/lando/lando/releases/download/$LANDO_VERSION/lando-$LANDO_VERSION.dmg"
+LANDO_DEB="https://github.com/lando/lando/releases/download/$LANDO_VERSION/lando-$LANDO_VERSION.deb"
 
 # Install Lando.
-if [ "$(uname)" == "Darwin" ]; then
-    # TODO: Use .dmg instead (can I download and install with brew manually?).
-    # See: https://github.com/lando/lando/issues/598#issuecomment-380244198
-    # Install with Homebrew on macOS.
-    brew cask install lando
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    # TODO: Support other OSes besides Debian derivatives.
-    # Install with .deb package.
-    wget $LANDO_DEB
-    sudo dpkg -i $LANDO_DEB_FILENAME
+if ! `lando version` ; then
+    if [ "$(uname)" == "Darwin" ]; then
+        # Install with Homebrew on macOS.
+        curl $LANDO_DMG -O
+        # TODO: Install LandoInstaller.pkg from the DMG.
+    elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+        # Install with .deb package.
+        curl $LANDO_DEB -O
+        sudo dpkg -i $(basename $LANDO_DEB)
+    fi
 fi
 
 # Clone Drupal.
@@ -37,6 +38,8 @@ lando start
 # Install dependencies with Lando Composer.
 lando composer install
 
-# TODO: Install the Drupal site (with Drush?).
+# Install Drupal with Drush inside Lando.
+lando drush si
+
 # TODO: Test that the environment responds to a request?
 # TODO: Kill Lando? (`lando poweroff`).
