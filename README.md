@@ -10,7 +10,7 @@ At the time, there are a large number of different ways people can start running
 
 If the method is linked to a local build script, there is an automated build process that can be easily measured in terms of complexity, dependencies, and time required to build (basically, go from no Drupal to Drupal 8 site installed and accessible in the browser).
 
-  1. [`git-clone-local.sh`](methods/git-clone-local.sh): Git clone and run a local environment with PHP and SQLite [using Drupal core](https://www.drupal.org/project/drupal/issues/2911319).
+  1. [`drupal-quick-start.sh`](methods/drupal-quick-start.sh): Download Drupal and run a local environment with PHP and SQLite [using Drupal core's `quick-start`](https://www.drupal.org/project/drupal/issues/2911319).
   1. [`composer-drupal-vm.sh`](methods/composer-drupal-vm.sh): [Drupal Composer Project](https://github.com/drupal-composer/drupal-project) and [Drupal VM Docker Composer Plugin](https://github.com/geerlingguy/drupal-vm-docker).
   1. [`lando.sh`](methods/lando.sh): Download Drupal and run a local environment with [Lando](https://docs.devwithlando.io).
   1. [`drupal-vm-composer.sh`](methods/drupal-vm-composer.sh): [Drupal VM](https://www.drupalvm.com), Vagrant, and VirtualBox, with [Drupal Composer Project](https://github.com/drupal-composer/drupal-project).
