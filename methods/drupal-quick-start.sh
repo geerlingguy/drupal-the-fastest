@@ -21,7 +21,7 @@ git init
 curl $CURRENT_PATCH | git apply -v
 
 # Run the site using a local PHP environment.
-php core/scripts/drupal quick-start standard
+php core/scripts/drupal quick-start standard --suppress-login
 
 # TODO: Test that the environment responds to a request?
 # TODO: Kill quick-start with Ctrl-C automatically?
