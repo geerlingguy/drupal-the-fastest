@@ -13,7 +13,7 @@
 INSTALL_PROFILE="standard"
 
 # Clone Drupal VM.
-git clone git@github.com:geerlingguy/drupal-vm.git drupal-vm-composer
+git clone https://github.com/geerlingguy/drupal-vm.git drupal-vm-composer
 cd drupal-vm-composer
 
 # Create a config.yml file with our customizations.
