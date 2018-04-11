@@ -8,6 +8,9 @@ env:
   - method: lando.sh
   - method: drupal-vm-composer.sh
 
+before_script:
+  - phpenv config-add tests/travis.php.ini
+
 script:
   # Run tests.
   - cd ${PWD}/methods
