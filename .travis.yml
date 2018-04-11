@@ -1,1 +1,14 @@
 ---
+services: docker
+
+env:
+  # Run each method in a separate environment.
+  - method: drupal-quick-start.sh
+  - method: composer-drupal-vm.sh
+  - method: lando.sh
+  - method: drupal-vm-composer.sh
+
+script:
+  # Run tests.
+  - cd ${PWD}/methods
+  - ./${method}
