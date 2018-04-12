@@ -22,5 +22,8 @@ echo "drupal_install_profile: $INSTALL_PROFILE" > config.yml
 # Run the local development environment.
 vagrant up
 
-# TODO: Test that the environment responds to a request?
-# TODO: Destroy the environment? (vagrant destroy)
+# Test that the environment responds to a request.
+curl -s http://www.drupalvm.test/
+
+# Destroy the environment.
+vagrant destroy -f

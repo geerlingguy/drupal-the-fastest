@@ -21,17 +21,30 @@ If the method is linked to a local build script, there is an automated build pro
 
 The intention here is to make as automated a build process per tool as possible, so anyone can re-verify both the build process and the complexity and time taken for each.
 
+### Test Philosophy
+
+There is no one reliable way to measure "what is the [best|fastest|most efficient]" local development tool for Drupal. However, I define a basic set of tasks which apply universally and are consistently measurable across any of the tools available:
+
+  1. Download and install dependencies (for things like VirtualBox or Docker CE, I discount the time involved downloading and installing them to be more consistent across modern environment tools).
+  1. Download Drupal (or create codebase with Composer).
+  1. Download the development environment tool (and install it if necessary).
+  1. Start the local development environment.
+  1. Install Drupal (either with `drush site-install` or an inbuilt method).
+  1. Load the home page.
+
+The scripts included with this repository are all meant to do the above process, end-to-end, repeatably, and ideally fully automated within Travis CI so there is little variance from workstation to workstation (e.g. I have a fast 2016 MacBook Pro with high speed Internet, but maybe someone else has an older PC with really slow Internet—that greatly affects benchmarking!).
+
 ## Results
 
-TODO: Results will be posted here once the methods are fleshed out a little more.
+Current as of: **April 12, 2018**
 
-| Tool Name                           | Time to build | No. of Required Dependencies | No. of Steps |
-| ----------------------------------- | ------------- | ---------------------------- | ------------ |
-| Git clone local                     | TODO          | TODO                         | TODO         |
-| Composer with Drupal VM Docker      | TODO          | TODO                         | TODO         |
-| Git Clone with Lando                | TODO          | TODO                         | TODO         |
-| Drupal VM with Vagrant and Composer | TODO          | TODO                         | TODO         |
-| SimplyTest.me                       | TODO          | TODO                         | TODO         |
+| Tool Name                           | Time to build | Required Dependencies | Steps | Environment |
+| ----------------------------------- | ------------- | --------------------- | ----- | ----------- |
+| Drupal quick-start                  | 02:00         | 2                     | 3     | Travis CI   |
+| Composer with Drupal VM Docker      | 05:53         | 3                     | 4     | Travis CI   |
+| Drupal with Lando                   | 03:01         | 2                     | 7     | Travis CI   |
+| Drupal VM with Vagrant and Composer | 08:33         | 3                     | 2     | MacBook Pro |
+| SimplyTest.me                       | TODO          | 0                     | 1     | Cloud       |
 
 ## License
 
