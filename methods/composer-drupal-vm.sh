@@ -21,6 +21,7 @@ composer require --dev geerlingguy/drupal-vm-docker
 
 # Run the local development environment.
 docker-compose up -d
+sleep 10
 
 # Install Drupal inside the container.
 docker exec drupal_vm_docker bash -c "cd $DOCROOT && drush si --root=$DOCROOT --db-url=mysql://drupal:drupal@127.0.0.1/drupal"
