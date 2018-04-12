@@ -17,7 +17,7 @@ LANDO_DEB="https://github.com/lando/lando/releases/download/$LANDO_VERSION/lando
 # Install Lando.
 if ! lando version ; then
     if [ "$(uname)" == "Darwin" ]; then
-        # Install with Homebrew on macOS.
+        # Install with .dmg on macOS.
         curl $LANDO_DMG -O -L
         # TODO: Install LandoInstaller.pkg from the DMG.
     elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
@@ -44,4 +44,4 @@ lando drush si -y --site-name="Drupal Lando" --db-url=mysql://drupal8:drupal8@da
 curl -s http://drupallando.lndo.site
 
 # TODO: Kill Lando.
-# lando poweroff
+lando poweroff

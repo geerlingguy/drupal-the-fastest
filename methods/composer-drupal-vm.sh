@@ -5,7 +5,8 @@
 # Based on: https://www.jeffgeerling.com/blog/2018/modern-way-build-and-develop-drupal-8-sites-using-composer
 #
 # Prerequisites:
-#   - Install PHP and Composer.
+#   - Install PHP.
+#   - Install Composer.
 #   - Install Docker CE.
 
 # Variables.
