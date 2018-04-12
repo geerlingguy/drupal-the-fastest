@@ -42,7 +42,7 @@ Current as of: **April 12, 2018**
 | Composer with Drupal VM Docker      | 05:53         | 3                     | 4     | Travis CI   |
 | Drupal with Lando                   | 03:01         | 1                     | 7     | Travis CI   |
 | Drupal VM with Vagrant and Composer | 08:33         | 3                     | 2     | MacBook Pro |
-| Drupal with DDEV Local              | TODO          | 1                     | 6     | Travis CI   |
+| Drupal with DDEV Local              | 02:30         | 1                     | 6     | Travis CI   |
 | SimplyTest.me                       | TODO          | 0                     | 1     | Cloud       |
 
 ## License
