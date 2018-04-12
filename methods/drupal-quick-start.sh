@@ -9,7 +9,7 @@
 #   - Install PHP.
 
 # Variables.
-CURRENT_PATCH="https://www.drupal.org/files/issues/2018-04-12/2911319-2-223.patch"
+CURRENT_PATCH="https://www.drupal.org/files/issues/2018-04-12/2911319-2-226.patch"
 INSTALL_PROFILE="standard"
 
 # Download and expand Drupal.
