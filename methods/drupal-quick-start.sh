@@ -8,7 +8,7 @@
 #   - Install PHP and Composer.
 
 # Variables.
-CURRENT_PATCH="https://www.drupal.org/files/issues/2018-04-11/2911319-2-200_0.patch"
+CURRENT_PATCH="https://www.drupal.org/files/issues/2018-04-12/2911319-2-223.patch"
 INSTALL_PROFILE="standard"
 
 # Download and expand Drupal.
@@ -22,10 +22,17 @@ curl $CURRENT_PATCH | git apply -v
 
 # Run the site using a local PHP environment.
 php core/scripts/drupal quick-start standard --suppress-login --port 8888 &
-# Wait 2 minutes for Drupal installation to complete.
-sleep 120
+PID=$!
+QUICK_START_PGID=$(ps opgid= "$PID")
+
+# Wait until port 8888 is listening to continue.
+while ! lsof -i:8888 ; do
+  sleep 1
+done
 
 # Test that the environment responds to a request.
 curl -s http://localhost:8888/
 
-# TODO: Kill backgrounded quick-start?
+# Kill backgrounded quick-start.
+echo $QUICK_START_PGID
+kill -- -$QUICK_START_PGID
