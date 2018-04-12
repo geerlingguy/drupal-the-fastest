@@ -22,7 +22,7 @@ curl $CURRENT_PATCH | git apply -v
 
 # Run the site using a local PHP environment.
 php core/scripts/drupal quick-start standard --suppress-login --port 8888 &
-sleep 60
+sleep 300
 
 # Test that the environment responds to a request.
 curl -s http://localhost:8888/
