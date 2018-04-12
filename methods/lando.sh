@@ -1,11 +1,10 @@
 #!/bin/bash
 #
 # Drupal install method:
-# Git clone and run a local environment with Lando.
+# Download Drupal and run a local environment with Lando.
 # Based on: https://www.jeffgeerling.com/blog/2018/getting-started-lando-testing-fresh-drupal-8-umami-site
 #
 # Prerequisites:
-#   - Install Git.
 #   - Install Docker CE.
 
 # Variables.
@@ -28,8 +27,8 @@ if ! lando version ; then
 fi
 
 # Download and expand Drupal.
-curl https://ftp-origin.drupal.org/files/projects/drupal-8.6.x-dev.zip -o drupal-lando.zip
-unzip -q drupal-lando.zip && rm drupal-lando.zip && mv drupal-8.6.x-dev drupal-lando
+curl -O https://ftp-origin.drupal.org/files/projects/drupal-8.6.x-dev.zip
+unzip -q drupal-8.6.x-dev.zip && rm drupal-8.6.x-dev.zip && mv drupal-8.6.x-dev drupal-lando
 cd drupal-lando
 
 # Initialize and start Lando.
@@ -43,5 +42,5 @@ lando drush si -y --site-name="Drupal Lando" --db-url=mysql://drupal8:drupal8@da
 # Test that the environment responds to a request.
 curl -s http://drupallando.lndo.site
 
-# TODO: Kill Lando.
+# Kill Lando.
 lando poweroff

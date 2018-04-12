@@ -14,10 +14,8 @@ If the method is linked to a local build script, there is an automated build pro
   1. [`composer-drupal-vm.sh`](methods/composer-drupal-vm.sh): [Drupal Composer Project](https://github.com/drupal-composer/drupal-project) and [Drupal VM Docker Composer Plugin](https://github.com/geerlingguy/drupal-vm-docker).
   1. [`lando.sh`](methods/lando.sh): Download Drupal and run a local environment with [Lando](https://docs.devwithlando.io).
   1. [`drupal-vm-composer.sh`](methods/drupal-vm-composer.sh): [Drupal VM](https://www.drupalvm.com), Vagrant, and VirtualBox, with [Drupal Composer Project](https://github.com/drupal-composer/drupal-project).
+  1. [`ddev-local.sh`](methods/ddev-local.sh): Download Drupal and run a local environment with [DDEV Local](https://github.com/drud/ddev).
   1. [SimplyTest.me](https://simplytest.me).
-  1. Try Drupal, hosting provider 1.
-  1. Try Drupal, hosting provider 2.
-  1. Try Drupal, hosting provider 3.
 
 The intention here is to make as automated a build process per tool as possible, so anyone can re-verify both the build process and the complexity and time taken for each.
 
@@ -42,8 +40,9 @@ Current as of: **April 12, 2018**
 | ----------------------------------- | ------------- | --------------------- | ----- | ----------- |
 | Drupal quick-start                  | 02:00         | 2                     | 3     | Travis CI   |
 | Composer with Drupal VM Docker      | 05:53         | 3                     | 4     | Travis CI   |
-| Drupal with Lando                   | 03:01         | 2                     | 7     | Travis CI   |
+| Drupal with Lando                   | 03:01         | 1                     | 7     | Travis CI   |
 | Drupal VM with Vagrant and Composer | 08:33         | 3                     | 2     | MacBook Pro |
+| Drupal with DDEV Local              | TODO          | 1                     | 6     | Travis CI   |
 | SimplyTest.me                       | TODO          | 0                     | 1     | Cloud       |
 
 ## License

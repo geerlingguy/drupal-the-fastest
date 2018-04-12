@@ -1,5 +1,5 @@
 methods/drupal-quick-start/
 methods/composer-drupal-vm/
 methods/drupal-lando/
-methods/.lando.yml
+methods/drupal-ddev/
 methods/drupal-vm-composer/

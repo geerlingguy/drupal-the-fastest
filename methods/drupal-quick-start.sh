@@ -22,7 +22,7 @@ git init
 curl $CURRENT_PATCH | git apply -v
 
 # Run the site using a local PHP environment.
-php core/scripts/drupal quick-start standard --suppress-login --port 8888 &
+php core/scripts/drupal quick-start $INSTALL_PROFILE --suppress-login --port 8888 &
 
 # Wait until port 8888 is listening to continue.
 while ! lsof -i:8888 ; do
