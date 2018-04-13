@@ -6,6 +6,8 @@ At DrupalCon Nashville 2018, I became deeply interested in the realm of first-ti
 
 At the time, there are a large number of different ways people can start running and using a new Drupal installation, and documentation is all over the place. The intention of this project is to get a list of some of the most stable, simple, and quick ways to get a Drupal site installed and running for testing or site building, and measure a few benchmarks to help determine which one(s) might be best for Drupal newcomers.
 
+For reference, here's a spreadsheet I maintain of almost all community-maintained [local Drupal development environment tools](https://docs.google.com/spreadsheets/d/11LWo_ks9TUoZIYJW0voXwogawohqAbOFv_dcBlAVs2E/edit?usp=drive_web&ouid=107078709110443510384).
+
 ## Methods
 
 If the method is linked to a local build script, there is an automated build process that can be easily measured in terms of complexity, dependencies, and time required to build (basically, go from no Drupal to Drupal 8 site installed and accessible in the browser).
