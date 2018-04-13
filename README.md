@@ -4,9 +4,9 @@
 
 At DrupalCon Nashville 2018, I became deeply interested in the realm of first-time Drupal experiences, specifically around technical evaluation, and how people would get their feet wet with Drupal.
 
-At the time, there are a large number of different ways people can start running and using a new Drupal installation, and documentation is all over the place. The intention of this project is to get a list of some of the most stable, simple, and quick ways to get a Drupal site installed and running for testing or site building, and measure a few benchmarks to help determine which one(s) might be best for Drupal newcomers.
+There are a number of different tools people can use to run a new Drupal installation, but documentation and ease of use for beginners is all over the place. The intention of this project is to highlight the most stable, simple, and popular ways to get a Drupal site installed and running for testing or site building, and measure a few benchmarks to help determine which one(s) might be best for Drupal newcomers.
 
-For reference, here's a spreadsheet I maintain of almost all community-maintained [local Drupal development environment tools](https://docs.google.com/spreadsheets/d/11LWo_ks9TUoZIYJW0voXwogawohqAbOFv_dcBlAVs2E/edit?usp=drive_web&ouid=107078709110443510384).
+For reference, here's a spreadsheet I maintain of all the community-maintained [local Drupal development environment tools](https://docs.google.com/spreadsheets/d/11LWo_ks9TUoZIYJW0voXwogawohqAbOFv_dcBlAVs2E/edit?usp=drive_web&ouid=107078709110443510384) I've heard of.
 
 ## Methods
 
