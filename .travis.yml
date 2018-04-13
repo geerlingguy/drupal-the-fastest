@@ -7,6 +7,7 @@ env:
   - method: composer-drupal-vm.sh
   - method: lando.sh
   - method: ddev-local.sh
+  - method: docksal.sh
 
   # Can't test in Travis: https://github.com/travis-ci/travis-ci/issues/6060
   # - method: drupal-vm-composer.sh

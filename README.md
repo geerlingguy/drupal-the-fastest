@@ -15,6 +15,7 @@ If the method is linked to a local build script, there is an automated build pro
   1. [`lando.sh`](methods/lando.sh): Download Drupal and run a local environment with [Lando](https://docs.devwithlando.io).
   1. [`drupal-vm-composer.sh`](methods/drupal-vm-composer.sh): [Drupal VM](https://www.drupalvm.com), Vagrant, and VirtualBox, with [Drupal Composer Project](https://github.com/drupal-composer/drupal-project).
   1. [`ddev-local.sh`](methods/ddev-local.sh): Download Drupal and run a local environment with [DDEV Local](https://github.com/drud/ddev).
+  1. [`docksal.sh`](methods/docksal.sh): Run a local environment with [Docksal](https://docksal.io).
   1. [SimplyTest.me](https://simplytest.me).
 
 The intention here is to make as automated a build process per tool as possible, so anyone can re-verify both the build process and the complexity and time taken for each.
@@ -43,6 +44,7 @@ Current as of: **April 12, 2018**
 | Drupal with Lando                   | 03:01         | 1                     | 7     | Travis CI   |
 | Drupal VM with Vagrant and Composer | 08:33         | 3                     | 2     | MacBook Pro |
 | Drupal with DDEV Local              | 02:30         | 1                     | 6     | Travis CI   |
+| Drupal with Docksal                 | TODO          | 1                     | 5     | Travis CI   |
 | SimplyTest.me                       | TODO          | 0                     | 1     | Cloud       |
 
 ## License
