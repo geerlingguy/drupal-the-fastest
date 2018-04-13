@@ -44,8 +44,8 @@ Current as of: **April 12, 2018**
 | Drupal with Lando                   | 03:01         | 1                     | 7     | Travis CI   |
 | Drupal VM with Vagrant and Composer | 08:33         | 3                     | 2     | MacBook Pro |
 | Drupal with DDEV Local              | 02:30         | 1                     | 6     | Travis CI   |
-| Drupal with Docksal                 | TODO          | 1                     | 5     | Travis CI   |
-| SimplyTest.me                       | TODO          | 0                     | 1     | Cloud       |
+| Drupal with Docksal                 | 02:39         | 1                     | 5     | Travis CI   |
+| SimplyTest.me                       | 01:22         | 0                     | 1     | Cloud       |
 
 ## License
 
