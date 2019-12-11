@@ -13,9 +13,12 @@
 DOCROOT="/var/www/drupalvm/drupal/web"
 INSTALL_PROFILE="standard"
 
-# Create a Drupal project using drupal-composer/drupal-project.
-composer create-project drupal-composer/drupal-project:8.x-dev composer-drupal-vm --stability dev --no-interaction
+# Create a Drupal project using Composer.
+composer create-project drupal/recommended-project:^8@dev composer-drupal-vm --stability dev --no-interaction
 cd composer-drupal-vm
+
+# Add Drush.
+composer require drush/drush
 
 # Add the Drupal VM Docker Composer plugin.
 composer require --dev geerlingguy/drupal-vm-docker
@@ -30,4 +33,5 @@ docker exec drupal_vm_docker bash -c "cd $DOCROOT && drush si -y $INSTALL_PROFIL
 # Test that the environment responds to a request.
 curl -s http://localhost/
 
-# TODO: Destroy the container?
+# Tear down the environment.
+docker-compose down -v
