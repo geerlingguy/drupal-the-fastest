@@ -17,13 +17,13 @@ if ! ddev version ; then
         brew tap drud/ddev && brew install ddev
     elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
         # Install with curl | bash.
-        curl https://raw.githubusercontent.com/drud/ddev/master/install_ddev.sh | bash
+        curl https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash
     fi
 fi
 
 # Download and expand Drupal.
-curl -O https://ftp-origin.drupal.org/files/projects/drupal-8.6.x-dev.zip
-unzip -q drupal-8.6.x-dev.zip && rm drupal-8.6.x-dev.zip && mv drupal-8.6.x-dev drupal-ddev
+curl -O https://ftp-origin.drupal.org/files/projects/drupal-8.8.x-dev.zip
+unzip -q drupal-8.8.x-dev.zip && rm drupal-8.8.x-dev.zip && mv drupal-8.8.x-dev drupal-ddev
 cd drupal-ddev
 
 # Configure DDEV.
@@ -32,10 +32,10 @@ ddev config --projectname drupal-ddev --projecttype drupal8
 # Start DDEV.
 ddev start
 
-# TODO: Install Drupal.
+# Install Drupal.
 ddev exec drush si -y $INSTALL_PROFILE --site-name="Drupal DDEV" --db-url=mysql://db:db@db/db
 
-# TODO: Test that the environment responds to a request.
+# Test that the environment responds to a request.
 curl -s http://drupal-ddev.ddev.local/
 
 # Kill DDEV.
