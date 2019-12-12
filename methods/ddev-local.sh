@@ -10,6 +10,11 @@
 # Variables.
 INSTALL_PROFILE="standard"
 
+# If on Travis CI, update Docker CE.
+if [[ $TRAVIS ]]; then
+  source tests/docker-latest.sh
+fi
+
 # Install DDEV Local.
 if ! ddev version ; then
     if [ "$(uname)" == "Darwin" ]; then
