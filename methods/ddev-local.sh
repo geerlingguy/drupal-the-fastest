@@ -34,6 +34,7 @@ cd drupal-ddev
 
 # Configure DDEV.
 ddev config --projectname drupal-ddev --projecttype drupal8
+ddev config global --instrumentation-opt-in=false
 
 # Start DDEV.
 ddev start
