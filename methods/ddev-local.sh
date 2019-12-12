@@ -11,7 +11,8 @@
 INSTALL_PROFILE="standard"
 
 # If on Travis CI, update Docker CE.
-if [[ $TRAVIS ]]; then
+if [ "$TRAVIS" == "true" ]; then
+  echo 'Updating Docker CE in Travis CI environment.'
   source tests/docker-latest.sh
 fi
 
