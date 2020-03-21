@@ -9,7 +9,7 @@
 
 # Variables.
 INSTALL_PROFILE="standard"
-LANDO_VERSION="v3.0.0-beta.40"
+LANDO_VERSION="v3.0.0-aft.2"
 LANDO_DMG="https://github.com/lando/lando/releases/download/$LANDO_VERSION/lando-$LANDO_VERSION.dmg"
 LANDO_DEB="https://github.com/lando/lando/releases/download/$LANDO_VERSION/lando-$LANDO_VERSION.deb"
 
@@ -27,20 +27,23 @@ if ! lando version ; then
 fi
 
 # Download and expand Drupal.
-curl -O https://ftp-origin.drupal.org/files/projects/drupal-8.6.x-dev.zip
-unzip -q drupal-8.6.x-dev.zip && rm drupal-8.6.x-dev.zip && mv drupal-8.6.x-dev drupal-lando
+curl -O https://ftp-origin.drupal.org/files/projects/drupal-8.8.x-dev.zip
+unzip -q drupal-8.8.x-dev.zip && rm drupal-8.8.x-dev.zip && mv drupal-8.8.x-dev drupal-lando
 cd drupal-lando
 
 # Initialize and start Lando.
-lando init --recipe drupal8 --webroot "." --name "drupal-lando" --yes
+lando init --source cwd --recipe drupal8 --webroot "." --name "drupal-lando" --yes
 lando start
 
-# Install Drush, then install Drupal inside Lando.
-lando composer require drush/drush
+# Allow Lando to fully start, and avoid this error:
+# "Failed to create database: ERROR 2003 (HY000): Can't connect to MySQL server on 'database'"
+sleep 2
+
+# Install Drupal inside Lando.
 lando drush si -y --site-name="Drupal Lando" --db-url=mysql://drupal8:drupal8@database/drupal8
 
 # Test that the environment responds to a request.
-curl -s http://drupallando.lndo.site
+curl -s http://drupal-lando.lndo.site
 
 # Kill Lando.
 lando poweroff
