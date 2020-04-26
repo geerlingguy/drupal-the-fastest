@@ -9,7 +9,7 @@
 
 # Variables.
 INSTALL_PROFILE="standard"
-LANDO_VERSION="v3.0.0-aft.2"
+LANDO_VERSION="v3.0.0-rrc.3"
 LANDO_DMG="https://github.com/lando/lando/releases/download/$LANDO_VERSION/lando-$LANDO_VERSION.dmg"
 LANDO_DEB="https://github.com/lando/lando/releases/download/$LANDO_VERSION/lando-$LANDO_VERSION.deb"
 
